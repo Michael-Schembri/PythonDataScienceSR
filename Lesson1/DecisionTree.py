@@ -1,4 +1,3 @@
-#from sklearn import tree
 import sklearn.tree as tree
 
 classifier = tree.DecisionTreeClassifier() 
@@ -11,7 +10,7 @@ TraininSetLabels = ['male', 'male', 'female', 'female', 'male', 'male', 'female'
  
 classifier = classifier.fit(trainingSet, TraininSetLabels)
 
-prediction = classifier.predict([[182, 70, 453]])
+prediction = classifier.predict([[182, 70, 45]])
 
 
 print(prediction)
