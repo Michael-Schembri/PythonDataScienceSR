@@ -1,7 +1,7 @@
 import sklearn.tree as tree
 import generateDataSet as ds
 
-dataSet = ds.generate(1000)
+dataSet = ds.generate(100000)
 
 trainingSet = dataSet[["Height", "Weight", "ShoeSize"]]
 trainingLabels = dataSet["Label"]
@@ -9,8 +9,15 @@ trainingLabels = dataSet["Label"]
 classifier = tree.DecisionTreeClassifier() 
 classifier = classifier.fit(trainingSet, trainingLabels)
 
-# should always return male and female.
-validationSet = [[182, 70, 45], [155, 49, 34]]
+validationDF = ds.generate(100000,55)
+validationDF["Predicted"] = classifier.predict(validationDF[["Height", "Weight", "ShoeSize"]])
+validationDF["Match"] = validationDF["Label"] == validationDF["Predicted"]
 
-prediction = classifier.predict(validationSet)
-print(prediction)
+#print(dataSet)
+#print(validationDF)
+correctlyMatched = validationDF[validationDF["Match"]==True]
+percentage = len(correctlyMatched.index) / len(validationDF.index)
+print("{0}%".format(percentage*100))
+
+#prediction = classifier.predict(validationSet)
+#print(prediction)
