@@ -4,7 +4,8 @@ import matplotlib.pyplot as plt
 from pandas import DataFrame
 from mpl_toolkits.mplot3d import Axes3D
 
-dataSet = ds.generate(1000)
+#dataSet = pd.read_csv("Lesson1\\DataSets\\validationSet.csv")
+dataSet = pd.read_csv("Lesson1\\DataSets\\trainingSet.csv")
 #marker = lambda label : 'x' if (label == 'female') else 'o'
 #dataSet["Marker"] = marker([dataSet["Label"]])
  
