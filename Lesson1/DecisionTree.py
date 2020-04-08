@@ -18,6 +18,3 @@ validationDF["Match"] = validationDF["Label"] == validationDF["Predicted"]
 correctlyMatched = validationDF[validationDF["Match"]==True]
 percentage = len(correctlyMatched.index) / len(validationDF.index)
 print("{0}%".format(percentage*100))
-
-#prediction = classifier.predict(validationSet)
-#print(prediction)
