@@ -30,7 +30,7 @@ x2 = square(x)
 
 resultsDF = pd.DataFrame(columns=["TrainingSetSize", "NumNeighbors","PercentageMatch"])
 
-ns = [3, 5, 9, 15]
+ns = [1, 3, 5, 9, 15]
 
 for p in x2:
     q = math.ceil(p/2)
@@ -53,3 +53,4 @@ plt.show()
 # seems to stabilize at x= ~15, depending on number of neighbors. 
 # the jump from 3>5 was approximately as large as 5>15. 
 # there seems to be a point of diminishing returns
+# this algorithm also performs well due to the evenness of the data and the fact that all factors play an equal role in classification
