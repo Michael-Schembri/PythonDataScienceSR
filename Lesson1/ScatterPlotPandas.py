@@ -1,7 +1,6 @@
 import generateDataSet as ds
 import pandas as pd
 import matplotlib.pyplot as plt
-from pandas import DataFrame
 from mpl_toolkits.mplot3d import Axes3D
 
 #dataSet = pd.read_csv("Lesson1\\DataSets\\validationSet.csv")
